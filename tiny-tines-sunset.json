@@ -1,0 +1,25 @@
+{
+  "agents": [
+    {
+      "type": "HTTPRequestAgent",
+      "name": "location",
+      "options": {
+        "url": "http://free.ipwhois.io/json/"
+      }
+    },
+    {
+      "type": "HTTPRequestAgent",
+      "name": "sunset",
+      "options": {
+        "url": "https://api.sunrise-sunset.org/json?lat={{location.latitude}}&lng={{location.longitude}}"
+      }
+    },
+    {
+      "type": "PrintAgent",
+      "name": "print",
+      "options": {
+        "message": "Sunset in {{location.city}}, {{location.country}} is at {{sunset.results.sunset}}."
+      }
+    }
+  ]
+}
