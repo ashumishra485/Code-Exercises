@@ -21,6 +21,7 @@ public class MainClass {
 
 	public static void main(String[] args) {
 
+		
 		try {
 			text = new String(Files.readAllBytes(Paths.get("tiny-tines-sunset.json")), StandardCharsets.UTF_8);
 			JSONObject object = new JSONObject(text);
